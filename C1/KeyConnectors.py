@@ -40,17 +40,17 @@ interests = [
  (8, "Big Data"), (8, "artificial intelligence"), (9, "Hadoop"),
  (9, "Java"), (9, "MapReduce"), (9, "Big Data") ]
 
-# keys are interests, values are lists of user_ids with that interest
+# 键-兴趣，值-有这个兴趣的用户id
 user_ids_by_interest = defaultdict(list)
 for user_id, interest in interests:
     user_ids_by_interest[interest].append(user_id)
-# keys are user_ids, values are lists of interests for that user_id
+# 键-用户id，值-该用户的兴趣们
 interests_by_user_id = defaultdict(list)
 for user_id, interest in interests:
     interests_by_user_id[user_id].append(interest)
 
 def number_of_friends(user):
-    """how many friends does _user_ have?"""
+    """该用户有多少个朋友"""
     return len(user["friends"])
 
 def friends_of_friend_ids_bad(user):
